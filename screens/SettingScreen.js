@@ -35,10 +35,11 @@ export default class SettingScreen extends React.Component{
     })
     }
     updateUserDetails=()=>{
+                                     //cause it is unique 
         db.collection('Users').doc(this.state.docId).update({
         'homeAdddress': this.state.address,
-        'mobile_number': this.state.mobile_number,
-        'email_id': this.state.email_id,
+        'mobile_number': this.state.mobileNumber,
+        'email_id': this.state.emailId,
         })
         return Alert.alert('Profile Updated Successfully')
     }
@@ -80,7 +81,7 @@ export default class SettingScreen extends React.Component{
 
                         <TextInput
                         style={styles.inputBox}
-                        placeholder='Enter Your Phone Number'
+                        placeholder='Enter Your Email'
                         keyboardType={'email-address'}
                         onChangeText={(text)=>{
                         this.setState({

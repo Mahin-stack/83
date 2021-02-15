@@ -40,6 +40,9 @@ export default class BookDonateScreen extends React.Component{
     subtitle={item.reason_forRequest}
     rightElement={
       <TouchableOpacity 
+      onPress={()=>{
+        this.props.navigation.navigate('RecieverDetails', {'details': item})
+      }}
       style={styles.button}
       >
   <Text style={styles.buttontext}>View</Text>
